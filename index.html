@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Grow a Garden Stock</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body onload="checkLogin(); init();">
+  <div id="loading-container">
+    <div id="loading-bar-wrapper">
+      <div id="loading-bar"></div>
+    </div>
+    <span id="loading-text">Loading...</span>
+  </div>
+
+  <div id="marquee-container">
+    <span id="alert-marquee"></span>
+    <button id="close-marquee">✖</button>
+  </div>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Filters</h2>
+      <input type="text" id="search" placeholder="Search items…" />
+      <h3>Rarities</h3>
+      <div id="rarity-filters"></div>
+      <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+    </aside>
+    <main>
+      <h1>🌼 Grow a Garden Stock</h1>
+      <section id="items"></section>
+    </main>
+  </div>
+  <audio id="update-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_cbe42b0cc1.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

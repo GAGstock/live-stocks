@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Login - Grow a Garden</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <h1>Grow a Garden Login</h1>
+    <input type="password" id="password" placeholder="Enter password…" />
+    <button onclick="login()">Login</button>
+  </div>
+  <script>
+    const SECRET = "gardensecret"; // change as needed
+    function login() {
+      const pw = document.getElementById("password").value;
+      if (pw === SECRET) {
+        localStorage.setItem("authenticated", "true");
+        window.location.href = "index.html";
+      } else {
+        alert("Incorrect password!");
+      }
+    }
+    // Auto redirect if already logged in
+    if (localStorage.getItem("authenticated") === "true") {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
